@@ -50,7 +50,7 @@ class AdminMenu
                         <li>Enter <b>username</b> for Bot</li>
                         <li>BotFather will return <b>Token</b> and Link Chat of Your Bot</li>
                         <li>Go to <b>Your Bot</b> and Send any Message (it will create chat ID)</li>
-                        <li><b>Final</b>, Insert your bot Token to option Below and Click Submit</li>
+                        <li style="color: red;"><b>Final</b>, Insert your bot Token to option Below and Click Submit</li>
                     </ol>
 
                     <h3>

@@ -38,9 +38,16 @@ class APIService
                     }
                     $bot = new BotService($option->botToken);
                     $data = $bot->sendMessage($message, $option->chatID);
+
+                    if (empty($data) || $data['ok'] !== true) {
+                        wp_send_json_error([
+                            "message" => "Can not Send Message!",
+                        ]);
+                        exit;
+                    }
+
                     wp_send_json_success([
-                        "message" => "Done!",
-                        "data" => $data
+                        "message" => "Done!"
                     ]);
                     exit;
                 },
