@@ -111,6 +111,8 @@ class AdminMenu
                                 return;
                             }
 
+                            const _this = $(this);
+
                             $.ajax({
                                 url: `<?php echo APIService::$apiUrl; ?>`,
                                 method: 'POST',
@@ -120,6 +122,9 @@ class AdminMenu
                                 data: {
                                     message: message
                                 },
+                                beforeSend: function(){
+                                    _this.attr("disabled", "");
+                                },
                                 success: function(res) {
                                     if (res.success) {
                                         alert("Done!");
@@ -128,6 +133,9 @@ class AdminMenu
                                     }
 
                                 },
+                                complete: function(){
+                                    _this.removeAttr("disabled");
+                                }
                             });
 
                         });
